@@ -1,0 +1,257 @@
+/* Umumiy uslub */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #21004b, #0d0221 80%);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Header */
+.motivatsiya-header {
+    background: linear-gradient(90deg, #7209b7, #b5179e, #f72585);
+    padding: 40px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: headerFade 2s ease-in-out;
+}
+
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.motivatsiya-header h1 {
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.motivatsiya-header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Asosiy qism */
+.motivatsiya-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Sandiq */
+.chest {
+    position: relative;
+    cursor: pointer;
+    width: 250px;
+    height: 220px;
+    transition: transform 0.5s ease;
+}
+
+.chest:hover {
+    transform: scale(1.05);
+}
+
+.chest img {
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+/* Yorug‘lik effekti */
+.light {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 70%);
+    opacity: 0;
+    transition: opacity 1s ease;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+/* Uchuvchi zarrachalar */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkleMove 3s linear infinite;
+}
+
+.sparkles::after {
+    width: 4px;
+    height: 4px;
+    background: #ff66c4;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleMove {
+    0% {
+        top: 100%;
+        left: 50%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        top: -20%;
+        left: calc(10% + 80% * random());
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Iqtibos oynasi */
+.quote-box {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 50px;
+    border-radius: 25px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+    animation: boxAppear 1.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.quote-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(255, 80, 255, 0.6);
+}
+
+@keyframes boxAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#quoteText {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    animation: textFade 1s ease;
+}
+
+#quoteAuthor {
+    font-size: 1em;
+    color: #ffd6ff;
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 25px;
+    animation: authorFade 1.5s ease;
+}
+
+@keyframes textFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes authorFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tugmalar */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background: linear-gradient(90deg, #ff00c8, #9d4edd);
+    border: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.4s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #f72585, #b5179e);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    padding: 20px 10px;
+    font-size: 0.9em;
+    color: #ddd;
+    background: linear-gradient(90deg, #240046, #3c096c);
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.4);
+}

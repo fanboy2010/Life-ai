@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #1a002b, #3b0066);
+    color: #fff;
+    overflow-x: hidden;
+    transition: background 0.5s, color 0.5s;
+}
+
+.sarlavha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo-qism {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.nom h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ff66ff;
+}
+
+.nom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.menyu {
+    display: flex;
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+.menyu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menyu a:hover {
+    color: #ff66ff;
+    transform: scale(1.1);
+}
+
+.tugmalar button {
+    background: transparent;
+    border: 1px solid #ff66ff;
+    border-radius: 8px;
+    color: #fff;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tugmalar button:hover {
+    background: #ff66ff;
+    color: #000;
+}
+
+.asosiy-qism {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.tanishtiruv {
+    max-width: 700px;
+    animation: chiqish 1.2s ease forwards;
+}
+
+.tanishtiruv h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.tanishtiruv span {
+    color: #ff66ff;
+    text-shadow: 0 0 10px #ff66ff;
+}
+
+.tanishtiruv p {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.boshlash-btn {
+    background: #ff66ff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boshlash-btn:hover {
+    background: #fff;
+    color: #ff00ff;
+    transform: scale(1.05);
+}
+
+.oyoq {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+@keyframes chiqish {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#menyu-toggle {
+    display: none;
+}
+
+.menyu-ikon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sarlavha {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menyu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        border-top: 1px solid #ff00ff;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    #menyu-toggle:checked+.menyu-ikon+.menyu {
+        display: flex;
+    }
+
+    .menyu-ikon {
+        display: block;
+        color: #fff;
+    }
+}

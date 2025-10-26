@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life AI — Aloqa</title>
+    <link rel="stylesheet" href="aloqa.css">
+</head>
+
+<body>
+
+   
+    <div class="intro-modal" id="introModal">
+        <p class="intro-text" id="introText">Aloqaga chiqmoqchimisiz?</p>
+        <button class="intro-btn" id="okBtn">OK</button>
+    </div>
+
+   
+    <header class="header">
+        <div class="logo">Life AI</div>
+        <nav class="menu">
+            <a target="_blank" href="boshsahifa.html">Bosh sahifa</a>
+            <a target="_blank" href="tashkilot.html">Tashkilot haqida</a>
+            <a target="_blank" href="asosiy.html">Kurslar</a>
+            <a target="_blank" href="mativatsiya.html">Motivatsiya</a>
+            <a target="_blank" href="aloqa.html" class="active">Aloqa</a>
+        </nav>
+    </header>
+
+  
+    <main class="contact-section" id="aloqaSection">
+        <h1 class="contact-title">Biz bilan bog‘laning</h1>
+        <form class="contact-form" id="contactForm">
+            <input type="text" class="input-field" name="name" placeholder="Ismingiz" required>
+            <input type="email" class="input-field" name="email" placeholder="Email manzilingiz" required>
+            <textarea class="textarea-field" name="message" placeholder="Xabaringiz" required></textarea>
+            <button type="submit" class="btn-submit">Yuborish</button>
+        </form>
+
+   
+        <div class="socials">
+            <div class="social" onclick="window.open('https://t.me/jungkook_2010','_blank')">
+                T<span class="social-tooltip">@jungkook_2010</span>
+            </div>
+            <div class="social" onclick="window.open('https://instagram.com/falsafa_210','_blank')">
+                I<span class="social-tooltip">@falsafa_210</span>
+            </div>
+            <div class="social" onclick="window.open('mailto:o.sobirov2010.08@gmail.com')">
+                E<span class="social-tooltip">o.sobirov2010.08@gmail.com</span>
+            </div>
+            <div class="social" onclick="window.open('https://www.youtube.com/@LifeAI2100','_blank')">
+                Y<span class="social-tooltip">Life.AI.2100</span>
+            </div>
+            <div class="social" onclick="window.open('tel:+998878110610')">
+                📞<span class="social-tooltip">+998-87-811-06-10</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Muallif: <strong>Og‘abek Sobirov</strong> | © 2025 Life AI</p>
+    </footer>
+
+    <script>
+     
+        const introModal = document.getElementById('introModal');
+        const okBtn = document.getElementById('okBtn');
+        const introText = document.getElementById('introText');
+        let step = 0;
+
+        okBtn.addEventListener('click', () => {
+            step++;
+            if (step === 1) {
+                introText.innerText = 'Telefon orqali bog‘lanmoqchimisiz?\n+998-87-811-06-10';
+            } else if (step === 2) {
+                introText.innerText = 'Telegram va boshqa platformalarda bog‘laning:\n@jungkook_2010 | @falsafa_210 | Life.AI.2100';
+            } else {
+                introModal.style.display = 'none';
+                document.getElementById('aloqaSection').style.display = 'block';
+            }
+        });
+
+  
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = form.name.value, email = form.email.value, message = form.message.value;
+            if (name && email && message) {
+                alert(`Xabaringiz qabul qilindi!\n\nIsm: ${name}\nEmail: ${email}\nXabar: ${message}`);
+                form.reset();
+            } else { alert('Iltimos, barcha maydonlarni to‘ldiring!'); }
+        });
+    </script>
+
+</body>
+
+</html>

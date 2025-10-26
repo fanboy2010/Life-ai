@@ -1,0 +1,242 @@
+/* ======================== */
+/* === Umumiy sozlamalar === */
+/* ======================== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #2b004a, #4b007c);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ======================== */
+/* === Header === */
+/* ======================== */
+.sarlavha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 70px;
+    background: #1a002f;
+    box-shadow: 0 2px 10px rgba(255, 0, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff4dff;
+}
+
+.menyu a {
+    color: white;
+    margin: 0 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menyu a:hover,
+.menyu a.aktiv {
+    color: #ff4dff;
+}
+
+/* ======================== */
+/* === Asosiy qism === */
+/* ======================== */
+.asosiy-qism {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.kirish h1 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffccff;
+    text-shadow: 0 0 10px #ff4dff;
+    animation: fadeInDown 1s ease;
+}
+
+.kirish .taqdim {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 900px;
+    margin: 20px auto 0;
+    animation: fadeIn 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+/* ======================== */
+/* === Kurslar === */
+/* ======================== */
+.kurslar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff80ff;
+    text-shadow: 0 0 6px #ff4dff;
+    animation: fadeIn 1s ease;
+}
+
+.kurslar ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+.kurslar li {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 12px 0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 0, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kurslar li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 0, 255, 0.4);
+}
+
+/* ======================== */
+/* === Asoschi === */
+/* ======================== */
+.asoschi-quti {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.asoschi-rasm {
+    width: 180px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.asoschi-rasm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+}
+
+.asoschi-matn h3 {
+    color: #ff80ff;
+    margin-top: 0;
+}
+
+.asoschi-matn p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ======================== */
+/* === Qadriyatlar === */
+/* ======================== */
+.qadriyatlar-quti {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.qadriyat {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.2);
+    font-size: 18px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.qadriyat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+}
+
+/* ======================== */
+/* === Tugmalar === */
+/* ======================== */
+.btn {
+    background: #ff4dff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #ff4dff, #ff00ff);
+    transform: scale(1.05);
+}
+
+/* ======================== */
+/* === Footer === */
+/* ======================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1a002f;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ======================== */
+/* === Animatsiyalar === */
+/* ======================== */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================== */
+/* === Responsive === */
+/* ======================== */
+@media (max-width: 768px) {
+    .sarlavha {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .menyu a {
+        margin: 10px 0;
+    }
+
+    .asosiy-qism {
+        padding: 50px 15px;
+    }
+
+    .kurslar ul,
+    .qadriyatlar-quti,
+    .asoschi-quti {
+        flex-direction: column;
+        align-items: center;
+    }
+}
